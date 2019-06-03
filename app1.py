@@ -10,10 +10,6 @@ parser.add_argument("-u", metavar='U',  help="Username")
 parser.add_argument("-d", help="Directory name (where the user-answers are stored)")
 
 args = parser.parse_args()
-# minioClient = Minio('connect.cloudyuga.guru:9000',
-#                     access_key='AKIAIOSFODNN7CLOUDYUGAROCKS',
-#                     secret_key='wJalrXUtnFEMI/K7MDENG/bPxRfiCYCLOUDYUGAROCKS',
-#                     secure=False)
 minioClient = Minio(os.environ['SERVER_NAME'],
                    access_key=str(os.environ['ACCESS_KEY']),
                    secret_key=str(os.environ['SECRET_KEY']),
